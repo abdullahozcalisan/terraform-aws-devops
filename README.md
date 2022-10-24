@@ -1,1 +1,1 @@
-# terraform-aws-devops
+# Tomcat Application Deployment with Terraform on AWS. 
