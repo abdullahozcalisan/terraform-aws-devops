@@ -1,5 +1,5 @@
 resource "aws_elastic_beanstalk_environment" "project-bean-prod" {
-  name                = "tf-test-name-devops"
+  name                = "tf-test-apo-devops"
   application         = aws_elastic_beanstalk_application.project-prod.name
   solution_stack_name = "64bit Amazon Linux 2 v4.3.0 running Tomcat 8.5 Corretto 11"
 

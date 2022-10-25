@@ -1,5 +1,5 @@
 resource "aws_db_subnet_group" "project_db_sub_group" {
-  name       = "main"
+  name       = "db-sub"
   subnet_ids = [module.vpc.private_subnets[0], module.vpc.private_subnets[1], module.vpc.private_subnets[2]]
 
   tags = {
@@ -8,7 +8,7 @@ resource "aws_db_subnet_group" "project_db_sub_group" {
 }
 
 resource "aws_elasticache_subnet_group" "project_ec_sub_group" {
-  name       = "main"
+  name       = "ecache-sub"
   subnet_ids = [module.vpc.private_subnets[0], module.vpc.private_subnets[1], module.vpc.private_subnets[2]]
 
   tags = {
@@ -23,7 +23,7 @@ resource "aws_db_instance" "project_rds" {
   engine                 = "mysql"
   engine_version         = "5.7"
   instance_class         = "db.t2.micro"
-  db_name                   = var.db_name
+  db_name                = var.db_name
   username               = var.db_user
   password               = var.db_pass
   parameter_group_name   = "default.mysql5.7"

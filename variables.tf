@@ -16,7 +16,11 @@ variable "pub_key_path" {
 }
 
 variable "priv_key_path" {
-  default = "devops"
+  default = "devops.pem"
+}
+
+variable "priv_key_path2" {
+  default = "deployer-key.ppk"
 }
 
 variable "username" {
